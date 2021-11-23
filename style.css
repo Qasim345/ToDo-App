@@ -1,0 +1,256 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'ProductSans';
+  text-decoration: none;
+  outline: none;
+  list-style: none;
+  border: none;
+}
+:root{
+  --bg: #eef3f9;
+  --wh: #fff;
+  --bl: #1876f3;
+  --gr: #ddd;
+  --mbg: #5555f3;
+}
+@font-face{
+  font-family: 'ProductSans';
+  src: url(ProductSans.ttf);
+}
+@font-face{
+  font-family: 'material-icons';
+  src: url(material-icons.ttf);
+}
+body{
+  height: 100vh;
+  background: var(--bg);
+}
+body.dark{
+  background: #333;
+}
+span{
+  font-family: 'material-icons';
+  font-size: 20px;
+}
+.navbar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--mbg);
+  color: #fff;
+  z-index: 2;
+  box-shadow: 0 3px 5px rgba(0,0,0,0.2);
+}
+.navbar.dark{
+  background: #000;
+  box-shadow: 0 3px 5px rgba(255,255,255,0.3);
+}
+.navbar #btn{
+  font-size: 30px;
+}
+.menu{
+  position: fixed;
+  top: -100%;
+  width: 100%;
+  left: 0;
+  background: var(--mbg);
+  z-index: 3;
+  color: #fff;
+  transition: 0.3s;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+}
+.menu.dark{
+  background: #000;
+}
+.menu.act{
+  top: 0;
+}
+.menu .menu-btn{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+}
+.menu-btn #close-menu{
+  font-size: 30px;
+}
+.menu ul{
+  padding: 10px 0;
+}
+.menu ul li a{
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  color: #fff;
+}
+.menu li a:hover{
+  background: var(--wh);
+  color: var(--mbg);
+  transition: 0.3s;
+}
+.container{
+  width: 90%;
+  margin: 5% auto;
+  margin-top: 60px;
+  min-height: 500px;
+  padding: 30px;
+  background: var(--wh);
+  border: 1px solid var(--gr);
+  border-radius: 5px;
+  overflow: hidden;
+}
+.container.dark{
+  background: #000;
+}
+.container .form{
+  width: 100%;
+  padding-bottom: 10px;
+}
+.form{
+  animation: up 0.5s ease-in;
+}
+@keyframes up{
+  0%{
+    transform: translateY(-100%);
+  }
+  100%{
+    transform: translateY(0);
+  }
+}
+.form h2{
+  padding-bottom: 15px;
+  text-align: center;
+}
+.form .input{
+  width: 100%;
+  position: relative;
+  margin: 10px 0;
+}
+.form .input input{
+  width: 100%;
+  height: 42px;
+  border: 1px solid #a7b6d1;
+  border-radius: 3px;
+  padding-left: 35px;
+}
+.form.dark input,.form.dark textarea{
+  background: #333;
+}
+.form .input textarea{
+  min-width: 100%;
+  max-width: 100%;
+  padding: 12px 35px;
+  min-height: 130px;
+  border: 1px solid #a7b6d1;
+  border-radius: 5px;
+  resize: none;
+}
+.form .input span{
+  position: absolute;
+  top: 12px;
+  left: 10px;
+  color: #a7b6d1;
+}
+.form.dark span{
+  color: #ddd;
+}
+.form button{
+  width: 100%;
+  height: 42px;
+  background: var(--mbg);
+  color: #fff;
+  font-weight: bold;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 3px rgb(85,85,255,0.5);
+}
+.form.dark button{
+  background: #eee;
+  color: #333;
+}
+.form button span{
+  margin-left: 10px;
+}
+.form input:focus,.form textarea:focus{
+  border-color: var(--mbg);
+  transition: 0.3s;
+  caret-color: #5555ff;
+}
+.form input:focus ~ span,.form textarea:focus ~ span{
+  color: var(--mbg);
+  transition: 0.3s;
+}
+.container .text{
+  width: 100%;
+  height: 220px;
+  margin-top: 10px;
+  padding: 3px;
+  border-top: 1px solid #ddd;
+  overflow-y: scroll;
+  box-shadow: inset 2px 0 3px rgba(0,0,0,0.2);
+  border-radius: 3px;
+}
+.container .text::-webkit-scrollbar{
+  width: 5px;
+  height: 100%;
+  background: var(--bg);
+}
+.container .text::-webkit-scrollbar-thumb{
+  width: 100%;
+  background: var(--mbg);
+  border-radius: 5px;
+}
+.container.dark .text::-webkit-scrollbar-thumb{
+  background: #333;
+}
+.container .text .box{
+  width: 98%;
+  margin: 5px auto;
+  border: 1px solid #a7b6d1;
+  border-radius: 3px;
+  padding: 10px;
+}
+.container .text .box .top{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5px;
+}
+.container .text .box a{
+  color: var(--mbg);
+  padding: 5px;
+}
+.container.dark .text a{
+  color: #eee;
+}
+.container .text p{
+  padding-top: 5px;
+}
+.container.dark .text {
+  color: #fff;
+}
+.loader{
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--wh);
+  border-radius: 50%;
+  border-top-color: var(--mbg);
+  animation: rot 1s linear infinite;
+}
+@keyframes rot{
+  100%{
+    transform: rotate(360deg);
+  }
+}
